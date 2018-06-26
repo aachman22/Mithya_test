@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+</head>
+<meta charset="utf-8" /> 
+<body>
+	<form class="login-form">
+    	<input type="text" id="username" placeholder="name">
+    	<input type="password" id="password" placeholder="password">
+    	<input type="button" class="button" value="Login" onclick="login()">
+  	</form>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  	<script>
+
+  		var x,i;
+	
+		function login() {
+			
+			//var flag, value;
+
+			//var user = '[ { "name": ["aachman","b","c","d","e","f","g","h","i","j"], "password": ["a","b","c","d","e","f","g","h","i","j"] } ]';
+
+			// var json = JSON.parse(user);
+			// console.log(json[0].name[0]);
+
+			// var len = json[0].name.length;
+   // 			name = document.getElementById('username').value;
+   //  		password = document.getElementById('password').value;
+   // 			var flag;
+   // 			for(var i=0; i<len;i++){
+   // 				if ((name == json[0].name[i]) && (password == json[0].password[i])){
+   // 					this.flag=1;
+   // 					break;
+   // 				}
+   // 				else
+   // 					this.flag=0;
+   // 			}
+   // 			if (this.flag==1){
+   //  			localStorage.setItem("username", name);
+   //  			window.location="userpage.php";	
+   // 			}
+   // 				//window.location="userpage.html";
+   // 			else
+   // 				alert("Wrong username/password combination");
+
+			$.getJSON("users.json", function (json) {
+   			var len = Object.keys(json.name).length
+   			name = document.getElementById('username').value;
+    		password = document.getElementById('password').value;
+   			var flag;
+   			for(var i=0; i<len;i++){
+          alert(json.name[i]);
+   				if ((name == json.name[i]) && (password == json.password[i])){
+   					flag=1;
+            var index = i;
+   					break;
+   				}
+   				else
+   					flag=0;
+   			}
+   			if (flag==1){
+          localStorage.setItem("index", index);
+    			localStorage.setItem("username", name);
+    			window.location="userpage.php";	
+   			}
+   				//window.location="userpage.html";
+   			else
+   				alert("Wrong username/password combination");
+			});
+			
+
+
+
+		}
+
+
+	</script>
+</body>
+</html>

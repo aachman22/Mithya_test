@@ -1,0 +1,33 @@
+#toppanel{
+    height: 10%;
+    width: 100%;
+    background-color: powderblue;
+} 
+
+#username {
+	position: absolute;
+	right: 2%;
+	top: 4.5%;
+
+}
+
+#hotels {
+	position: relative;
+	top: 1%;
+	height: 30%;
+	width: 100%;
+	background-color: #94A537;
+}
+
+button {
+	position: relative;
+	height: 50%;
+	width: 7%;
+	top: 25%;
+}
+
+#photo {
+	position: relative;
+	text-align: center;
+	margin-top: 2%;
+}
